@@ -1,0 +1,55 @@
+<!--
+  Generated template for the CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header">
+  <ion-navbar style="background-color: #488aff;">
+    <ion-title text-center>ITEMS IN CART</ion-title>
+    <ion-fab class="remove-items-button" [@slide]="slideOrFly" (click)="removeItems()">
+	    <button ion-fab>
+	    	<ion-icon name="trash" class="remove-items-button-icon"></ion-icon>
+	    </button>
+    </ion-fab>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-card style="margin: 0; box-shadow: none;">
+		<ion-card-header>
+		<!--
+		  	<button (click)="removeItems()" ion-button color="danger" round [disabled]="this.itemsToRemove.length == 0" icon-left large full><ion-icon name="trash"></ion-icon>Remove Items</button> -->
+		  	<ion-row>
+		  		<ion-col id="total-card" [@shrinkage]="shrinkOrStretch">
+
+		  			<h6>Total</h6>
+		  			<ion-badge class="total-badge">{{total | currency:'USD':true}}</ion-badge>
+		  		</ion-col>
+		  		<ion-col class='col-to-hide' [@visibility]="newTotalVisibility">
+		  			<h6>After deletion</h6>
+		  			<ion-badge class="total-badge newtotal-badge">{{newTotal | currency:'USD':true}}</ion-badge>
+		  		</ion-col>
+		  	</ion-row>
+		</ion-card-header>
+	</ion-card>
+	<ion-list>
+		<ion-item class="item" *ngFor="let i of items" [ngClass]="{'to-delete': i.ifRemove}" (click)="prepareToRemove(i)">
+			{{ i.name }}
+			<span *ngIf="i.ifRemove && i.quantity > 1" item-end style="margin-right: 50px; padding: 0 16px;" (click)="$event.stopPropagation()">
+				<button style="margin-right: 5px; padding: 0 5px; background-color: transparent" [disabled]="i.quantityToRemove <= 1">
+					<ion-icon style="font-size: 2.5em" name="arrow-dropleft" color="danger" (click)="changeQuantity(i, 'reduce')"></ion-icon>
+				</button>
+					<span style="position: relative; top: -8px">{{ i.quantityToRemove }}</span>
+				<button style="margin-left: 5px; padding: 0 5px; background-color: transparent" [disabled]="i.quantityToRemove == i.quantity">
+					<ion-icon style="font-size: 2.5em" name="arrow-dropright" color="danger" (click)="changeQuantity(i, 'increase')"></ion-icon>
+				</button>
+			</span>
+			<ion-badge class="price-if-delete-item" item-end><span *ngIf="i.ifRemove">-</span>
+				<span *ngIf="i.ifRemove && i.quantity > 1">{{ i.pricePerUnit * i.quantityToRemove | currency:'USD':true }}</span>
+				<span *ngIf="i.ifRemove && i.quantity == 1">{{ i.price | currency:'USD':true }}</span>
+				<span *ngIf="!i.ifRemove">{{ i.price | currency:'USD':true }}</span>
+			</ion-badge>
+		</ion-item>
+	</ion-list>
+</ion-content>

@@ -1,0 +1,84 @@
+page-cart {
+
+	.header {
+		background-color: #488aff;
+		padding: 14px 0;
+	}
+
+	.toolbar-background {
+		background-color: transparent;
+	}
+
+	.back-button {
+		color: white;
+		z-index: 9999;
+	}
+
+	.toolbar-title {
+		color: white;
+		align-item: center;
+		position: relative;
+		left: -32px;
+	}
+
+	.fab {
+		overflow: visible;
+	}
+
+	.remove-items-button {
+		position: absolute;
+		right: 24px;
+		top: 6px;
+		box-shadow: none;
+		z-index: 999;
+		opacity: 0;
+	}
+
+	.remove-items-button button {
+		background-color: white;
+		width: 45px;
+		height: 45px;
+	}
+
+	.remove-items-button-icon {
+		font-size: 2em; 
+		color: #FF3859;
+	}
+
+	.item {
+		color: #488aff;
+	}
+
+	.to-delete {
+		background-color: #F2F2F2;
+		color: #FF3859;
+		
+		.price-if-delete-item {
+			background-color: #FF3859;
+		}
+	}
+
+	#total-card { 
+		width: 99%;
+	}
+
+	.col-to-hide {
+		opacity: 0;
+		min-width: 1%;
+	}
+
+	.total-badge {
+		font-size: 2em;
+		width: 100%;
+		padding: 0.3em 0;
+		background-color: transparent;
+		color: #488aff;
+		border: 1px solid #488aff;
+	}
+
+	.newtotal-badge {
+		color: #FF3859;
+		background-color: transparent;
+		border: 1px solid #FF3859;
+	}
+}

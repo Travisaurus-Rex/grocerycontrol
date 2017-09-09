@@ -1,0 +1,35 @@
+<!--
+  Generated template for the AddItemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary" style="padding: 18px;">
+    <ion-title>ADD ITEM TO CART</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+		<span padding style="color: #488aff; font-size: 18px; text-transform: capitalize; padding: 0;">{{ item.name }}</span>
+		<ion-item style="padding: 0;">
+			<ion-label stacked>Price</ion-label>
+			<ion-input type="number" [(ngModel)]="price" required placeholder="0.00"></ion-input>
+		</ion-item>
+		<ion-item style="padding: 0;">
+			<ion-label stacked>Quantity</ion-label>
+			<ion-input (focus)="quantity = null" (blur)="fixQuantity()" type="number" [(ngModel)]="quantity" required></ion-input>
+		</ion-item>
+		<ion-item style="margin-bottom: 12px; padding: 0;">
+			<ion-label stacked>Weight (Optional)</ion-label>
+			<ion-input type="number" [(ngModel)]="weight" optional></ion-input>
+		</ion-item>
+		<button style="margin-bottom: 12px;" padding full large [disabled]="!price" ion-button (click)="addToCart()">Add to Cart</button>
+		<button  padding full large ion-button (click)="close()" clear>Cancel</button>
+	
+	</ion-list>
+</ion-content>
