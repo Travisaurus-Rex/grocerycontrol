@@ -1,26 +1,66 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# Grocery Control  
 
-## How to use this template
+Grocery Control is a simple grocery list app built with **Ionic** and **Angular** (2017).  
+The goal of the app is to help people on a budget keep track of grocery costs while shopping.  
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+Users can:  
+- Add items to a grocery list  
+- Assign a cost to each item  
+- See a running total of expenses as they shop  
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+---
 
-### With the Ionic CLI:
+## Features  
+- 📋 Manage your grocery list in one place  
+- 💵 Enter the price of each item to keep track of spending  
+- ➕ Add, edit, or remove items on the fly  
+- 🛒 Designed for people who want to stay mindful of their budget  
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+---
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
+## Tech Stack  
+- **Ionic (v3)**  
+- **Angular (v4)**  
+- **TypeScript**  
 
-Then, to run it, cd into `myBlank` and run:
+> ⚠️ Note: This project was built in 2017. Dependencies are dated and may require adjustments to run on modern systems.  
 
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
+---
 
-Substitute ios for android if not on a Mac.
+## Getting Started  
+
+1. Clone the repo:  
+   ```bash
+   git clone https://github.com/yourusername/grocery-control.git
+   cd grocery-control
+   ```
+
+2. Install dependencies::  
+   ```bash
+   npm install
+   ```
+
+3. Run the app in the browser:  
+   ```bash
+   ionic serve
+   ```
+
+4. Clone the repo:  
+   ```bash
+   ionic cordova run android
+   # or
+   ionic cordova run ios
+   ```
+
+---
+
+## Status
+
+This project is no longer actively maintained, but is available publicly as a reference for anyone learning Ionic/Angular or exploring budgeting app concepts.
+
+
+## License
+
+MIT License
+
 
