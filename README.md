@@ -31,7 +31,7 @@ Users can:
 
 1. Clone the repo:  
    ```bash
-   git clone https://github.com/yourusername/grocery-control.git
+   git clone https://github.com/Travisaurus-Rex/grocery-control.git
    cd grocery-control
    ```
 
